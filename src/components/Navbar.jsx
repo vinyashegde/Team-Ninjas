@@ -1,18 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import {useNavigate} from 'react-router-dom';
 import Login from './Login';
 import Signup from './Signup';
 import { getAuth, signOut, onAuthStateChanged } from 'firebase/auth';
-
 
 const Navbar = () => {
   const [showLogin, setShowLogin] = useState(false);
   const [showSignup, setShowSignup] = useState(false);
   const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
-  // Listen for changes to the authentication state
-  onAuthStateChanged(getAuth(), (user) => {
-    setUser(user);
-  });
+  useEffect(() => {
+    // Listen for changes to the authentication state
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
+
+    return () => {
+      // Unsubscribe when the component is unmounted
+      unsubscribe();
+    };
+  }, []); // Empty dependency array ensures the effect runs only once on mount
 
   const handleLoginClick = () => {
     setShowLogin(true);
@@ -36,6 +45,14 @@ const Navbar = () => {
       });
   };
 
+  
+  const navigateToLogin = () => {
+    navigate('/login');
+  };
+
+  const navigateToSignup = () => {
+    navigate('/signup');
+  };
 
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900">
@@ -45,27 +62,28 @@ const Navbar = () => {
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
         </a>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          { /* Check if user is logged in and show Logout button */}
           {user ? (
+            // Show logout button when user is logged in
             <button
               type="button"
               onClick={handleLogoutClick}
-              className="text-white bg-red-500 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+              className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
             >
               Logout
             </button>
           ) : (
+            // Show login and signup buttons when user is not logged in
             <>
               <button
                 type="button"
-                onClick={handleLoginClick}
+                onClick={navigateToLogin}
                 className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 Login
               </button>
               <button
                 type="button"
-                onClick={handleSignupClick}
+                onClick={navigateToSignup}
                 className="text-gray-700 hover:text-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:text-gray-400 dark:hover:text-blue-500 dark:focus:ring-blue-600"
               >
                 Signup

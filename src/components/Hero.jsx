@@ -2,6 +2,20 @@
 import React from 'react';
 
 const Hero = () => {
+
+    const openPracticeProblems = () => {
+        window.open('https://www.interviewbit.com/coding-interview-questions/', '_blank');
+    };
+
+    const openFastTrackCourses = () => {
+        window.open('https://www.interviewbit.com/courses/fast-track/', '_blank');
+    };
+
+    const openInterviewPrep = () => {
+        window.open('https://www.interviewbit.com/practice/', '_blank');
+    };
+
+
     return (
         <div className="bg-[#e0f2fe]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,7 +58,7 @@ const Hero = () => {
                                 />
                                 <h3 className="text-lg font-semibold">Practice Problems</h3>
                                 <p className="mt-1 text-sm">Sharpen your coding skills with tailored challenges</p>
-                                <button className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 mt-4 bg-[#4f46e5] text-white py-2 px-4 rounded-md shadow-sm hover:bg-[#4338ca]">
+                                <button onClick={openPracticeProblems} className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 mt-4 bg-[#4f46e5] text-white py-2 px-4 rounded-md shadow-sm hover:bg-[#4338ca]">
                                     Practice Problems
                                 </button>
                             </div>
@@ -68,7 +82,7 @@ const Hero = () => {
                                 />
                                 <h3 className="text-lg font-semibold">Fast Track Courses</h3>
                                 <p className="mt-1 text-sm">Accelerate your learning with expert-led courses</p>
-                                <button className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 mt-4 bg-[#eab308] text-white py-2 px-4 rounded-md shadow-sm hover:bg-[#c19a00]">
+                                <button  onClick={openFastTrackCourses} className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 mt-4 bg-[#eab308] text-white py-2 px-4 rounded-md shadow-sm hover:bg-[#c19a00]">
                                     Fast Track Courses
                                 </button>
                             </div>
@@ -92,7 +106,7 @@ const Hero = () => {
                                 />
                                 <h3 className="text-lg font-semibold">Interview Prep</h3>
                                 <p className="mt-1 text-sm">Master the interview process with our comprehensive guide</p>
-                                <button className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 mt-4 bg-[#10b981] text-white py-2 px-4 rounded-md shadow-sm hover:bg-[#059669]">
+                                <button onClick={openInterviewPrep} className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 mt-4 bg-[#10b981] text-white py-2 px-4 rounded-md shadow-sm hover:bg-[#059669]">
                                     Interview Prep
                                 </button>
                             </div>

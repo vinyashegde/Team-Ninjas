@@ -10,6 +10,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Calendar from './components/Calendar';
 import Home from './components/Home';
+import JobListings from './components/JobListings';
 
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
@@ -37,7 +38,9 @@ const App = ({ firebaseApp }) => {
           <Route path="/questions" element={<QuestionList firebaseApp={firebaseApp} />} />
           <Route path="/login" element={<Login firebaseApp={firebaseApp} />} />
           <Route path="/signup" element={<Signup firebaseApp={firebaseApp} />} />
-          <Route path="/calendar" component={Home} />
+          {/* <Route path="/calendar" element={<Home />} /> */}
+          {/* New Route for Job Listings */}
+          <Route path="/jobs" element={<JobListings />} />
         </Routes>
         <Footer />
       </div>

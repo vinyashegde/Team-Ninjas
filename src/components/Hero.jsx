@@ -35,7 +35,7 @@ const Hero = () => {
                                     alt="Practice Problems"
                                     className="w-full h-auto"
                                     height="200"
-                                    src="https://via.placeholder.com/350x200"  // Updated URL
+                                    src="https://cdni.iconscout.com/illustration/premium/thumb/online-course-3611287-3119295.png?f=webp"  // Updated URL
                                     style={{
                                         aspectRatio: "350/200",
                                         objectFit: "cover",
@@ -59,7 +59,7 @@ const Hero = () => {
                                     alt="Fast Track Courses"
                                     className="w-full h-auto"
                                     height="200"
-                                    src="https://via.placeholder.com/350x200"  // Updated URL
+                                    src="https://static.vecteezy.com/system/resources/thumbnails/010/869/731/small/online-education-concept-illustration-digital-classroom-online-teaching-metaphors-free-png.png"  // Updated URL
                                     style={{
                                         aspectRatio: "350/200",
                                         objectFit: "cover",
@@ -83,7 +83,7 @@ const Hero = () => {
                                     alt="Interview Prep"
                                     className="w-full h-auto"
                                     height="200"
-                                    src="https://via.placeholder.com/350x200"  // Updated URL
+                                    src="https://www.buddyboss.com/wp-content/uploads/2023/03/Why-You-Should-Create-An-Online-Course-1.png"  // Updated URL
                                     style={{
                                         aspectRatio: "350/200",
                                         objectFit: "cover",

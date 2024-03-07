@@ -3,10 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fullcalendar/daygrid": "^6.1.11",
+    "@fullcalendar/interaction": "^6.1.11",
+    "@fullcalendar/react": "^6.1.11",
+    "@fullcalendar/resource-timegrid": "^6.1.11",
+    "@fullcalendar/timegrid": "^6.1.11",
+    "@syncfusion/ej2-react-schedule": "^24.2.8",
     "firebase": "^10.8.1",
     "flowbite": "^2.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-lottie": "^1.2.4",
     "react-router-dom": "^6.22.2",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"

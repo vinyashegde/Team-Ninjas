@@ -9,6 +9,7 @@ import QuestionList from './components/QuestionList';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Calendar from './components/Calendar';
+import Home from './components/Home';
 
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
@@ -36,7 +37,7 @@ const App = ({ firebaseApp }) => {
           <Route path="/questions" element={<QuestionList firebaseApp={firebaseApp} />} />
           <Route path="/login" element={<Login firebaseApp={firebaseApp} />} />
           <Route path="/signup" element={<Signup firebaseApp={firebaseApp} />} />
-          <Route path="/calendar" component={Calendar} />
+          <Route path="/calendar" component={Home} />
         </Routes>
         <Footer />
       </div>
